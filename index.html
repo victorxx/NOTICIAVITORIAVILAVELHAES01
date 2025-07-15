@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Notícias - Vitória e Vila Velha</title>
+
+  <!-- Meta Tags SEO -->
+  <meta name="description" content="Acompanhe as últimas notícias das prefeituras de Vitória e Vila Velha, com foco em editais, obras e serviços públicos.">
+  <meta name="keywords" content="Vitória, Vila Velha, notícias, prefeitura, edital, saúde, obras, capacitação">
+  <meta name="author" content="Portal Cidades ES">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Últimas notícias de Vitória e Vila Velha">
+  <meta property="og:description" content="Confira as principais atualizações das prefeituras capixabas.">
+  <meta property="og:image" content="https://example.com/imagens/capa-noticias.jpg">
+  <meta property="og:url" content="https://example.com/noticias">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Últimas notícias de Vitória e Vila Velha">
+  <meta name="twitter:description" content="Informações atualizadas das prefeituras capixabas.">
+  <meta name="twitter:image" content="https://example.com/imagens/capa-noticias.jpg">
+
+  <!-- Estilo otimizado -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1 {
+      color: #005BAC;
+      font-size: 28px;
+    }
+
+    ul#noticias-lista {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul#noticias-lista li {
+      background-color: #ffffff;
+      margin-bottom: 10px;
+      padding: 15px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    ul#noticias-lista li a {
+      color: #005BAC;
+      text-decoration: none;
+    }
+
+    ul#noticias-lista li a:hover {
+      text-decoration: underline;
+    }
+
+    #unique-id {
+      font-family: 'Courier New', Courier, monospace;
+      background: #eee;
+      padding: 5px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    /* Propaganda piscante */
+    .propaganda {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #FF0000;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 14px;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+      animation: piscar 1s infinite;
+      z-index: 999;
+    }
+
+    @keyframes piscar {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    @media (max-width: 600px) {
+      .propaganda {
+        font-size: 12px;
+        padding: 10px;
+        right: 10px;
+        bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Notícias das Prefeituras de Vitória e Vila Velha</h1>
+  <ul id="noticias-lista"></ul>
+
+  <p><strong>ID de Verificação Único:</strong> <span id="unique-id"></span></p>
+
+  <!-- Propaganda piscante -->
+  <div class="propaganda">🔥<a href="https://victorxx.github.io/redirecionae00/"> CONFERIR NÃO PERCA ESSA OPORTUNIDADE!</a>🔥</div>
+
+  <script>
+    // Array de notícias (Vitória e Vila Velha)
+    const noticias = [
+      {
+        cidade: "Vitória",
+        titulo: "Vitória lança maior edital de regularização fundiária",
+        data: "2025-07-14",
+        link: "https://www.vitoria.es.gov.br/noticia/regularizacao-2025.html"
+      },
+      {
+        cidade: "Vitória",
+        titulo: "Vitória abre processo seletivo na área da saúde",
+        data: "2025-07-12",
+        link: "https://www.vitoria.es.gov.br/noticia/saude-processo-seletivo.html"
+      },
+      {
+        cidade: "Vila Velha",
+        titulo: "Vila Velha oferece capacitação para negócios digitais",
+        data: "2025-07-10",
+        link: "https://www.vilavelha.es.gov.br/noticia/capacitacao-digital.html"
+      },
+      {
+        cidade: "Vila Velha",
+        titulo: "Acidente fatal em valão no bairro Santa Rita",
+        data: "2025-07-15",
+        link: "https://www.vilavelha.es.gov.br/noticia/acidente-santa-rita.html"
+      }
+    ];
+
+    // Renderiza as notícias na página
+    const ul = document.getElementById("noticias-lista");
+    noticias.forEach(noticia => {
+      const li = document.createElement("li");
+      li.innerHTML = `<strong>${noticia.cidade}</strong>: <a href="${noticia.link}" target="_blank">${noticia.titulo}</a> - <em>${noticia.data}</em>`;
+      ul.appendChild(li);
+    });
+
+    // Função para gerar um ID único com letras, números e caracteres especiais
+    function gerarIDUnico(tamanho = 16) {
+      const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+=[]{}";
+      let id = "";
+      for (let i = 0; i < tamanho; i++) {
+        id += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+      }
+      return id;
+    }
+
+    // Inserir o ID no HTML
+    document.getElementById("unique-id").textContent = gerarIDUnico(16);
+  </script>
+</body>
+</html>
